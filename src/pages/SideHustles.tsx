@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, PaypalIcon } from "lucide-react";
+import { ExternalLink, CreditCard } from "lucide-react";
 
 const platforms = [
   {
@@ -62,7 +62,7 @@ const SideHustles = () => {
         onClick={connectPaypal}
         className="w-full max-w-md mx-auto flex items-center justify-center gap-2 mb-8"
       >
-        <PaypalIcon className="h-5 w-5" />
+        <CreditCard className="h-5 w-5" />
         Connect PayPal Account
       </Button>
 
