@@ -8,6 +8,7 @@ import {
   Briefcase,
   Award
 } from "lucide-react";
+import { AppInstallPrompt } from "./AppInstallPrompt";
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
@@ -76,6 +77,7 @@ export function Layout() {
       <main className="pl-72 w-full">
         <Outlet />
       </main>
+      <AppInstallPrompt />
     </div>
   );
 }
