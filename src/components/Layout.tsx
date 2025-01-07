@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { 
@@ -8,7 +9,7 @@ import {
   Briefcase,
   Award
 } from "lucide-react";
-import { AppInstallPrompt } from "./AppInstallPrompt";
+import { PinAuth } from "./PinAuth";
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
@@ -21,6 +22,11 @@ const navigation = [
 
 export function Layout() {
   const location = useLocation();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  if (!isAuthenticated) {
+    return <PinAuth onAuthenticated={() => setIsAuthenticated(true)} />;
+  }
 
   return (
     <div className="min-h-screen flex">
@@ -77,7 +83,6 @@ export function Layout() {
       <main className="pl-72 w-full">
         <Outlet />
       </main>
-      <AppInstallPrompt />
     </div>
   );
 }
