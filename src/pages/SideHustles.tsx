@@ -97,49 +97,57 @@ const platforms = [
 
 const SideHustles = () => {
   const connectPaypal = () => {
-    // This would integrate with PayPal's API in a real implementation
     window.open("https://www.paypal.com/connect", "_blank");
   };
 
   return (
-    <div className="container mx-auto p-6 space-y-8">
-      <header className="space-y-2">
-        <h1 className="text-4xl font-bold tracking-tight text-primary">Side Hustles</h1>
+    <div className="container mx-auto px-4 sm:px-6 py-6 space-y-6 sm:space-y-8">
+      <header className="space-y-2 text-center sm:text-left">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent animate-fade-in">
+          Side Hustles
+        </h1>
         <p className="text-muted-foreground">Earn extra income through various online platforms</p>
       </header>
 
       <Button 
         onClick={connectPaypal}
-        className="w-full max-w-md mx-auto flex items-center justify-center gap-2 mb-8 hover:scale-105 transition-transform duration-200"
+        className="w-full sm:max-w-md mx-auto flex items-center justify-center gap-2 mb-6 sm:mb-8 
+                 hover:scale-105 transition-transform duration-200 bg-gradient-to-r from-purple-600 to-pink-600
+                 hover:opacity-90"
       >
         <CreditCard className="h-5 w-5" />
         Connect PayPal Account
       </Button>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {platforms.map((platform) => (
-          <Card key={platform.name} className="hover:shadow-lg transition-all duration-300 hover:scale-105 bg-white/50 backdrop-blur-sm border border-primary/20">
+          <Card 
+            key={platform.name} 
+            className="hover:shadow-lg transition-all duration-300 hover:scale-105 
+                     bg-gradient-to-br from-white/80 to-purple-50/50 backdrop-blur-sm 
+                     border border-purple-200/30 animate-fade-in"
+          >
             <CardHeader>
-              <CardTitle className="flex items-center justify-between text-primary">
+              <CardTitle className="flex items-center justify-between text-lg sm:text-xl text-purple-700">
                 {platform.name}
                 <a
                   href={platform.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:text-primary/80"
+                  className="text-purple-600 hover:text-purple-800 transition-colors"
                 >
                   <ExternalLink className="h-4 w-4" />
                 </a>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">{platform.description}</p>
+              <p className="text-gray-600 text-sm sm:text-base">{platform.description}</p>
             </CardContent>
           </Card>
         ))}
       </div>
 
-      <footer className="mt-12 text-center text-sm text-muted-foreground">
+      <footer className="mt-8 sm:mt-12 text-center text-sm text-muted-foreground">
         <p>Note: These platforms are independently operated. Maliyami is not responsible for any transactions or relationships formed through these services.</p>
       </footer>
     </div>
