@@ -7,6 +7,9 @@ import { Layout } from "./components/Layout";
 import Dashboard from "./pages/Dashboard";
 import Subscriptions from "./pages/Subscriptions";
 import VirtualCard from "./pages/VirtualCard";
+import CreditScore from "./pages/CreditScore";
+import Opportunities from "./pages/Opportunities";
+import SideHustles from "./pages/SideHustles";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +25,9 @@ const App = () => (
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="subscriptions" element={<Subscriptions />} />
             <Route path="virtual-card" element={<VirtualCard />} />
+            <Route path="credit-score" element={<CreditScore />} />
+            <Route path="opportunities" element={<Opportunities />} />
+            <Route path="side-hustles" element={<SideHustles />} />
           </Route>
         </Routes>
       </BrowserRouter>
